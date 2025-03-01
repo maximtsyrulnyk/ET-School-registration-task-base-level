@@ -15,7 +15,16 @@ router.get('/', function (req, res) {
   res.render('index', {})
   //                  ↑↑ сюди вводимо JSON дані
 })
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/test', function (req, res) {
+  // res.render генерує нам HTML сторінку
 
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('test', {
+    name: 'Test',
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
 // ================================================================
 
 // Підключаємо роутер до бек-енду
