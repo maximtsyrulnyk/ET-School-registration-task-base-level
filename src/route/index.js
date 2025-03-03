@@ -1,31 +1,24 @@
-// Підключаємо технологію express для back-end сервера
 const express = require('express')
-// Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
+const hbs = require('hbs')
 
-// ================================================================
-
-// router.get Створює нам один ентпоїнт
-
-//           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
-  //                  ↑↑ сюди вводимо JSON дані
+router.get('/', function (req, res, next) {
+  res.render('index')
 })
-//           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/test', function (req, res) {
-  // res.render генерує нам HTML сторінку
 
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('test', {
-    name: 'Test',
+router.get('/1', function (req, res, next) {
+  res.render('1-var', {
+    name: 'Dima',
   })
-  //                  ↑↑ сюди вводимо JSON дані
 })
-// ================================================================
 
-// Підключаємо роутер до бек-енду
+router.get('/2', function (req, res, next) {
+  res.render('2-with', {
+    user: {
+      name: 'Dima',
+    },
+    role: 'Admin',
+  })
+})
+
 module.exports = router
