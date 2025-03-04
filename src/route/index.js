@@ -21,4 +21,22 @@ router.get('/2', function (req, res, next) {
   })
 })
 
+router.get('/bootstrap', function (req, res, next) {
+  res.render('bootstrap', {
+    layout: 'bootstrap',
+  })
+})
+
+router.get('/register', function (req, res, next) {
+  res.render('register', {
+    layout: 'register',
+  })
+})
+
+router.get('/view', function (req, res, next) {
+  res.render('view', {
+    layout: 'view',
+  })
+})
+
 module.exports = router
